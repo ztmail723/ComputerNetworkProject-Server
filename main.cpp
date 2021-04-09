@@ -4,9 +4,9 @@
 
 int main(int argc, char* argv[])
 {
-    sock = socket(PF_PACKET, SOCK_RAW, htons(ETH_P_ALL));
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
     return a.exec(); //测试一下
+    // 测试信息2
 }
