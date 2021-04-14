@@ -22,6 +22,9 @@ private slots:
 
     void on_msgTextBrowser_textChanged();
 
+public slots:
+    void printTextMessage(QString msg);
+
 private:
     Ui::MainWindow* ui;
 

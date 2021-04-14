@@ -31,3 +31,8 @@ void MainWindow::on_msgTextBrowser_textChanged()
 {
     ui->msgTextBrowser->moveCursor(QTextCursor::End);
 }
+
+void MainWindow::printTextMessage(QString msg)
+{
+    ui->msgTextBrowser->append(msg);
+}
