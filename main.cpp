@@ -8,5 +8,5 @@ int main(int argc, char* argv[])
     MainWindow w;
     w.show();
     return a.exec(); //测试一下
-    // 测试信息2
+    // 测试信息23
 }
