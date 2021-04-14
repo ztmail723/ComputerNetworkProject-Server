@@ -7,7 +7,11 @@ class MyTcpServer : public QTcpServer
     Q_OBJECT
 
 public:
-    explicit MyTcpServer();
+    explicit MyTcpServer(QObject* parent = nullptr);
+
+public slots:
+    void startListen(quint16 port = 2333);
+
 protected:
     virtual void incomingConnection(qintptr socketDescriptor);
 };

@@ -24,5 +24,8 @@ private slots:
 
 private:
     Ui::MainWindow* ui;
+
+signals:
+    void serverListen(quint16 port);
 };
 #endif // MAINWINDOW_H
