@@ -14,84 +14,70 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="verticalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>340</x>
-      <y>10</y>
-      <width>441</width>
-      <height>521</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QLabel" name="msgLabel">
-       <property name="text">
-        <string>消息栏</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QTextBrowser" name="msgTextBrowser"/>
-     </item>
-     <item>
-      <widget class="QPushButton" name="clearButton">
-       <property name="text">
-        <string>清空</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="gridLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>10</y>
-      <width>261</width>
-      <height>521</height>
-     </rect>
-    </property>
-    <layout class="QGridLayout" name="gridLayout">
-     <item row="3" column="0" colspan="2">
-      <widget class="QPushButton" name="listenButton">
-       <property name="text">
-        <string>开始侦听</string>
-       </property>
-      </widget>
-     </item>
-     <item row="2" column="1">
-      <widget class="QLineEdit" name="portLineEdit">
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
-     <item row="1" column="0" colspan="2">
-      <widget class="QListView" name="clientListView"/>
-     </item>
-     <item row="2" column="0">
-      <widget class="QLabel" name="portLabel">
-       <property name="text">
-        <string>端口号：</string>
-       </property>
-      </widget>
-     </item>
-     <item row="0" column="0" colspan="2">
-      <widget class="QLabel" name="clientLabel">
-       <property name="text">
-        <string>客户端</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="3" column="0" colspan="2">
+       <widget class="QPushButton" name="listenButton">
+        <property name="text">
+         <string>开始侦听</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="portLineEdit">
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="2">
+       <widget class="QListView" name="clientListView"/>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="portLabel">
+        <property name="text">
+         <string>端口号：</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="2">
+       <widget class="QLabel" name="clientLabel">
+        <property name="text">
+         <string>客户端</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="msgLabel">
+        <property name="text">
+         <string>消息栏</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTextBrowser" name="msgTextBrowser"/>
+      </item>
+      <item>
+       <widget class="QPushButton" name="clearButton">
+        <property name="text">
+         <string>清空</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
