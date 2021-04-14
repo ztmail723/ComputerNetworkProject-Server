@@ -1,15 +1,15 @@
 #ifndef MYTCPSERVER_H
 #define MYTCPSERVER_H
-#include <QObject>
+#include <QTcpServer>
 
-class MyTcpServer : public QObject
+class MyTcpServer : public QTcpServer
 {
     Q_OBJECT
+
 public:
-    explicit MyTcpServer(QObject* parent = nullptr);
-
-signals:
-
+    explicit MyTcpServer();
+protected:
+    virtual void incomingConnection(qintptr socketDescriptor);
 };
 
 #endif // MYTCPSERVER_H

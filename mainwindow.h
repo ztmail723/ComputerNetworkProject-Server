@@ -12,10 +12,17 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget* parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_listenButton_clicked();
+
+    void on_clearButton_clicked();
+
+    void on_msgTextBrowser_textChanged();
+
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow* ui;
 };
 #endif // MAINWINDOW_H
