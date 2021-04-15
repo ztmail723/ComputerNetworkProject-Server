@@ -8,6 +8,11 @@ class MyThread : public QThread
     Q_OBJECT
 public:
     MyThread(qintptr socketDescriptor);
+    virtual void run();
+public slots:
+    void exit();
+private:
+    qintptr ptr;
 };
 
 #endif // MYTHREAD_H
