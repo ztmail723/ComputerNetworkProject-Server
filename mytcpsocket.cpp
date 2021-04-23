@@ -30,5 +30,5 @@ void MyTcpSocket::sendMessage(DataPkg pkg)
     QDataStream dts(&arr, QIODevice::WriteOnly);
     dts << pkg;
     this->write(arr);
-    emit printTextToWindow("服务端发送了一个" + QString::number(pkg.ID) + "数据包");
+    emit printTextToWindow("服务端发送了一个" + QString::number(pkg.ID) + "数据包，大小为" + QString::number(arr.size()));
 }
