@@ -1,6 +1,6 @@
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
 #include "mytcpserver.h"
+#include "ui_mainwindow.h"
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
@@ -16,10 +16,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
 void MainWindow::on_listenButton_clicked()
 {
-    emit serverListen(ui->portLineEdit->text().toUInt()); //发出侦听信号
+    emit serverListen(quint16(ui->portLineEdit->text().toUInt())); //发出侦听信号
 }
 
 void MainWindow::on_clearButton_clicked()
