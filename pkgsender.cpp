@@ -34,8 +34,5 @@ void PkgSender::send2003(quint64 fileID, QByteArray fileData)
 
 void PkgSender::send(DataPkg& pkg)
 {
-    QByteArray arr;
-    QDataStream dts(&arr, QIODevice::WriteOnly);
-    dts << pkg;
-    this->socket->write(arr);
+    this->socket->sendMessage(pkg);
 }
