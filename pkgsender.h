@@ -2,15 +2,13 @@
 #define PKGSENDER_H
 
 #include <QObject>
-
-class PkgSender : public QObject
-{
+class MyTcpSocket;
+class PkgSender : public QObject {
     Q_OBJECT
 public:
-    explicit PkgSender(QObject *parent = nullptr);
-
+    explicit PkgSender(MyTcpSocket* parent);
+    MyTcpSocket* socket;
 signals:
-
 };
 
 #endif // PKGSENDER_H

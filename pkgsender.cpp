@@ -1,6 +1,7 @@
 #include "pkgsender.h"
-
-PkgSender::PkgSender(QObject *parent) : QObject(parent)
+#include "mytcpsocket.h"
+PkgSender::PkgSender(MyTcpSocket* parent)
+    : QObject(parent)
+    , socket(parent)
 {
-
 }
