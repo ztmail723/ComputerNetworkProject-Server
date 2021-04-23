@@ -20,6 +20,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_listenButton_clicked()
 {
     emit serverListen(quint16(ui->portLineEdit->text().toUInt())); //发出侦听信号
+    ui->listenButton->setDisabled(true);
 }
 
 void MainWindow::on_clearButton_clicked()
