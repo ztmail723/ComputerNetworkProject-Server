@@ -14,6 +14,9 @@ public:
 public slots:
     void onReceiveData(); //收到信息
     void onDisconnected(); //断开连接
+    void sendMessage(DataPkg pkg);
+signals:
+    void printTextToWindow(QString msg);
 };
 
 #endif // MYTCPSOCKET_H

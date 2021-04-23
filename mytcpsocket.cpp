@@ -12,7 +12,7 @@ MyTcpSocket::MyTcpSocket(qintptr p)
 }
 void MyTcpSocket::onReceiveData()
 {
-    qDebug() << "服务端开始接受数据";
+    emit printTextToWindow("服务器开始接收数据");
     QByteArray array = this->readAll();
     QDataStream dts(&array, QIODevice::ReadOnly);
     DataPkg pkg;
@@ -22,4 +22,9 @@ void MyTcpSocket::onReceiveData()
 void MyTcpSocket::onDisconnected()
 {
     qDebug() << "有一个客户端断开";
+}
+
+void MyTcpSocket::sendMessage(DataPkg pkg)
+{
+    ;
 }

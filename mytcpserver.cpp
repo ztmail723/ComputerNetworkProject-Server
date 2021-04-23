@@ -1,9 +1,9 @@
 #include "mytcpserver.h"
 #include "mythread.h"
 
-MyTcpServer::MyTcpServer(QObject* parent) : QTcpServer(parent)
+MyTcpServer::MyTcpServer(QObject* parent)
+    : QTcpServer(parent)
 {
-
 }
 
 void MyTcpServer::startListen(quint16 port)
@@ -13,9 +13,10 @@ void MyTcpServer::startListen(quint16 port)
 
 void MyTcpServer::incomingConnection(qintptr socketDescriptor)
 {
-    qDebug() << "服务器接收到了新连接";
+    emit printTextToWindow("服务器接收到了新连接");
     MyThread* thread = new MyThread(socketDescriptor);
-    qDebug() << "建立新线程";
+    connect(thread, &MyThread::printTextToWindow, this, &MyTcpServer::printTextToWindow);
+    //qDebug() << "建立新线程";
     thread->start();
-    qDebug() << "线程开始运行";
+    //qDebug() << "线程开始运行";
 }

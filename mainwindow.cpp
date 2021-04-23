@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget* parent)
     ui->setupUi(this);
     MyTcpServer* server = new MyTcpServer(this);
     connect(this, &MainWindow::serverListen, server, &MyTcpServer::startListen);
+    connect(server, &MyTcpServer::printTextToWindow, this, &MainWindow::printTextMessage);
 }
 
 MainWindow::~MainWindow()
