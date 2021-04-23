@@ -43,6 +43,11 @@ void PkgHandler::handle1001(DataPkg& pkg)
 
 void PkgHandler::handle1002(DataPkg& pkg)
 {
+    QString userName = pkg.data.at(0).toString();
+    QString fileName = pkg.data.at(1).toString();
+    emit printMsg("用户" + userName + "请求获取文件" + fileName);
+    this->nowFile = new QFile("file/" + fileName);
+    this->nowFile->size();
 }
 
 void PkgHandler::handle1003(DataPkg& pkg)

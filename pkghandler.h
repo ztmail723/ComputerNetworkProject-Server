@@ -2,6 +2,7 @@
 #define PKGHANDLER_H
 
 #include "datapkg.h"
+#include <QFile>
 #include <QObject>
 class MyTcpSocket;
 class PkgHandler : public QObject {
@@ -12,6 +13,8 @@ public:
     void handle(DataPkg& pkg);
 
 private:
+    QFile* nowFile;
+    quint64 fileCount;
     void handle1001(DataPkg& pkg);
     void handle1002(DataPkg& pkg);
     void handle1003(DataPkg& pkg);
