@@ -17,6 +17,7 @@ void MyTcpSocket::onReceiveData()
     QDataStream dts(&array, QIODevice::ReadOnly);
     DataPkg pkg;
     dts >> pkg;
+    this->handler->handle(pkg); //将打包好的数据包交给handler处理
 }
 void MyTcpSocket::onDisconnected()
 {
