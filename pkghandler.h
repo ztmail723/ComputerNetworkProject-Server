@@ -13,6 +13,7 @@ public:
     void handle(DataPkg& pkg);
 
 private:
+    static qint64 segSize;
     QFile* nowFile;
     quint64 fileCount;
     void handle1001(DataPkg& pkg);
