@@ -16,7 +16,5 @@ void MyTcpServer::incomingConnection(qintptr socketDescriptor)
     emit printTextToWindow("服务器接收到了新连接");
     MyThread* thread = new MyThread(socketDescriptor);
     connect(thread, &MyThread::printTextToWindow, this, &MyTcpServer::printTextToWindow);
-    //qDebug() << "建立新线程";
     thread->start();
-    //qDebug() << "线程开始运行";
 }
