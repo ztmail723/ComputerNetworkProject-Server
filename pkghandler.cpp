@@ -50,6 +50,7 @@ void PkgHandler::handle1002(DataPkg& pkg)
     QString userName = pkg.data.at(0).toString();
     QString fileName = pkg.data.at(1).toString();
     this->nowFile = new QFile("file/" + fileName);
+    this->nowFile->open(QIODevice::ReadOnly);
     qint64 fileSize = this->nowFile->size();
     this->fileCount = quint64(fileSize / this->segSize + 1);
     emit printMsg("用户" + userName + "请求获取文件\"" + fileName + "\"(" + QString::number(fileSize) + " Byte)");
@@ -63,6 +64,8 @@ void PkgHandler::handle1003(DataPkg& pkg)
     QByteArray fileData;
     if (fileID == this->fileCount) {
         fileData = this->nowFile->readAll(); // 最后一个数据包
+        this->nowFile->close();
+        delete this->nowFile;
     } else {
         fileData = this->nowFile->read(this->segSize);
     }
