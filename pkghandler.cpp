@@ -3,7 +3,7 @@
 #include "pkgsender.h"
 #include <QDir>
 #include <QVariant>
-qint64 PkgHandler::segSize = 1024 * 16;
+qint64 PkgHandler::segSize = 1024;
 PkgHandler::PkgHandler(MyTcpSocket* parent)
     : QObject(parent)
     , socket(parent)
