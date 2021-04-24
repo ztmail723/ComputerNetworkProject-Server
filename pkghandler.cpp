@@ -3,12 +3,13 @@
 #include "pkgsender.h"
 #include <QDir>
 #include <QVariant>
-qint64 PkgHandler::segSize = 1024;
+qint64 PkgHandler::segSize = 1024 * 16;
 PkgHandler::PkgHandler(MyTcpSocket* parent)
     : QObject(parent)
     , socket(parent)
 {
     connect(this, &PkgHandler::printMsg, socket, &MyTcpSocket::printTextToWindow);
+    connect(this, &PkgHandler::addListWidget, socket, &MyTcpSocket::addListWidget);
 }
 
 void PkgHandler::handle(DataPkg& pkg)
@@ -54,6 +55,7 @@ void PkgHandler::handle1002(DataPkg& pkg)
     qint64 fileSize = this->nowFile->size();
     this->fileCount = quint64(fileSize / this->segSize + 1);
     emit printMsg("用户" + userName + "请求获取文件\"" + fileName + "\"(" + QString::number(fileSize) + " Byte)");
+    emit addListWidget(userName + " get " + fileName);
     this->socket->sender->send2002(fileName, this->fileCount);
 }
 

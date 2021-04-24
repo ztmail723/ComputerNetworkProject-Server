@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget* parent)
     MyTcpServer* server = new MyTcpServer(this);
     connect(this, &MainWindow::serverListen, server, &MyTcpServer::startListen);
     connect(server, &MyTcpServer::printTextToWindow, this, &MainWindow::printTextMessage);
+    connect(server, &MyTcpServer::addListWidget, this, &MainWindow::addListWidget);
 }
 
 MainWindow::~MainWindow()
@@ -36,4 +37,9 @@ void MainWindow::on_msgTextBrowser_textChanged()
 void MainWindow::printTextMessage(QString msg)
 {
     ui->msgTextBrowser->append(msg);
+}
+
+void MainWindow::addListWidget(QString item)
+{
+    ui->listWidget->addItem(item);
 }

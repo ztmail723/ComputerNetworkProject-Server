@@ -15,6 +15,7 @@ protected:
     virtual void incomingConnection(qintptr socketDescriptor) override;
 signals:
     void printTextToWindow(QString msg);
+    void addListWidget(QString item);
 };
 
 #endif // MYTCPSERVER_H

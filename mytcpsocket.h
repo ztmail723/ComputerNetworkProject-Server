@@ -17,6 +17,7 @@ public slots:
     void sendMessage(DataPkg pkg);
 signals:
     void printTextToWindow(QString msg);
+    void addListWidget(QString item);
 };
 
 #endif // MYTCPSOCKET_H

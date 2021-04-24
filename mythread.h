@@ -15,6 +15,7 @@ private:
     qintptr ptr;
 signals:
     void printTextToWindow(QString msg);
+    void addListWidget(QString item);
 };
 
 #endif // MYTHREAD_H

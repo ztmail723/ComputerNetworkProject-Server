@@ -25,6 +25,7 @@ private slots:
 
 public slots:
     void printTextMessage(QString msg);
+    void addListWidget(QString item);
 
 private:
     Ui::MainWindow* ui;

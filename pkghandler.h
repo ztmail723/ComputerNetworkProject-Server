@@ -21,6 +21,7 @@ private:
     void handle1003(DataPkg& pkg);
 signals:
     void printMsg(QString msg);
+    void addListWidget(QString item);
 };
 
 #endif // PKGHANDLER_H
